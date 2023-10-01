@@ -1,7 +1,5 @@
-﻿#region Meta
-	#Serpenz Software, https://www.serpenz.co.nz/
-	#last updated: Fri 8th Sept, 2023
-#endregion
+﻿#Serpenz Software, https://www.serpenz.co.nz/
+
 function Get-WifiKeys {
     $savedNetworks = netsh wlan show profiles | Select-String "All User Profile"
 
