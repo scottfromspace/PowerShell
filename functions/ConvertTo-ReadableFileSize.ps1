@@ -1,7 +1,5 @@
-﻿#region Meta
-	#Serpenz Software, https://www.serpenz.co.nz/
-	#last updated: Fri 8th Sept, 2023
-#endregion
+﻿#Serpenz Software, https://www.serpenz.co.nz/
+
 function ConvertTo-ReadableFileSize {
     param (
         [double]$sizeInBytes
