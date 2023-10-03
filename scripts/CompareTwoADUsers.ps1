@@ -28,7 +28,7 @@ $uniqueUser1Groups | ForEach-Object {
     Write-Host $_ -ForegroundColor Yellow
 }
 
-Write-Host "$user2's unique AD groups:"
+Write-Host "`n$user2's unique AD groups:"
 $uniqueUser2Groups | ForEach-Object {
     Write-Host $_ -ForegroundColor Cyan
 }
@@ -37,3 +37,5 @@ Write-Host "`nAD groups shared by both users:"
 $commonGroups | ForEach-Object {
     Write-Host $_ -ForegroundColor Green
 }
+
+Write-Host ""
