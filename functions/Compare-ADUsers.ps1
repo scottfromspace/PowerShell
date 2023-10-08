@@ -8,8 +8,6 @@ function Compare-ADUsers {
         [string]$user2
     )
 
-    Write-Host "`nFetching..."
-
     $user1Groups = Get-ADPrincipalGroupMembership $user1 | Select-Object -ExpandProperty Name
     $user2Groups = Get-ADPrincipalGroupMembership $user2 | Select-Object -ExpandProperty Name
 
