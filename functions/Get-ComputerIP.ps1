@@ -1,6 +1,6 @@
 #Serpenz Software, https://www.serpenz.co.nz/
 
-function Get-IPAddress {
+function Get-ComputerIP {
     param (
         [Parameter(Mandatory=$true)]
         [string]$ComputerName
