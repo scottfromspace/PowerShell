@@ -11,3 +11,5 @@ else
 {
     Write-Host "Can't find $Username's computer."
 }
+
+Read-Host "Press ENTER key to EXIT"

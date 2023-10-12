@@ -34,3 +34,5 @@ Write-Host "`nAD groups shared by both users:"
 $commonGroups | ForEach-Object {
     Write-Host $_ -ForegroundColor Green
 }
+
+Read-Host "Press ENTER key to EXIT"

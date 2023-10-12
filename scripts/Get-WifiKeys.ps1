@@ -16,3 +16,5 @@ foreach($networkName in $networkNames){
 
     $networkDetails
 }
+
+Read-Host "Press ENTER key to EXIT"

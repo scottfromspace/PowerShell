@@ -11,3 +11,5 @@ else
 {
     Write-Host "Could not determine the IP address for computer $ComputerName."
 }
+
+Read-Host "Press ENTER key to EXIT"

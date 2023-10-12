@@ -71,3 +71,5 @@ function New-PasswordString {
 }
 
 New-PasswordString
+
+Read-Host "Press ENTER key to EXIT"
