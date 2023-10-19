@@ -6,18 +6,28 @@ $userGroups = Get-ADPrincipalGroupMembership $user | Select-Object -ExpandProper
 
 $userGroups = $userGroups | Sort-Object
 
-$highlightedGroups = @("Group1", "Group2", "Group3")  # Add your group names here
+$commonGroups = @("Group1", "Group2")  # Add your group names here
 
 clear
 
 Write-Host "$user's AD groups:"
 $userGroups | ForEach-Object {
-    $groupName = $_
-    if ($highlightedGroups -contains $groupName) {
-        Write-Host $groupName -ForegroundColor Yellow
-    } else {
-        Write-Host $groupName
+    if($commonGroups -contains $_)
+    {
+        Write-Host $_ -ForegroundColor Cyan
+    }
+    else
+    {
+        Write-Host $_
     }
 }
 
-Read-Host "Press ENTER key to EXIT"
+Write-Host "`n$user's missing common AD groups:"
+$commonGroups | ForEach-Object {
+    if($userGroups -notcontains $_)
+    {
+        Write-Host $_ -ForegroundColor Yellow
+    }
+}
+
+Read-Host "`nPress ENTER key to EXIT"
