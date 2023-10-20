@@ -17,8 +17,9 @@ function Compare-ADUsers {
     {
 
         # Retrieve the user's first name and last name from Active Directory
-        $userNames = Get-ADUser -Identity $user -Properties GivenName, Surname
-        Write-Host ("User: " + $user + ", " + $User.GivenName + " " + $User.Surname)
+        $userID = Get-ADUser -Identity $user
+        Write-Host ("User: " + $user + ", " + $userID.GivenName + " " + $userFullName.Surname)
+        Write-Host ("Email: " + $userID.UserPrincipalName + "`n")
 
         # Extract password expiration information
         $PasswordExpiryLine = $NetUserOutput | Select-String "Password expires"
@@ -39,8 +40,15 @@ function Compare-ADUsers {
         {
             Write-Host "Password will expire " -NoNewline
             Write-host $PasswordExpiryDateTime.ToString("dd/MM/yyyy, 'at' HH:mm:ss") -ForegroundColor Yellow
-            Write-Host "Time remaining until expiration: "
-            Write-host "$($TimeRemaining.Days) days, $($TimeRemaining.Hours) hours, $($TimeRemaining.Minutes) minutes, $($TimeRemaining.Seconds) seconds." -ForegroundColor Yellow
+            Write-Host "Time remaining until expiration: " -NoNewline
+            Write-host "$($TimeRemaining.Days) days" -NoNewline -ForegroundColor Yellow
+            Write-Host ", " -NoNewline
+            Write-Host "$($TimeRemaining.Hours) hours" -NoNewline -ForegroundColor Yellow
+            Write-Host ", " -NoNewline
+            Write-Host "$($TimeRemaining.Minutes) minutes" -NoNewline -ForegroundColor Yellow
+            Write-Host ", & " -NoNewline
+            Write-Host "$($TimeRemaining.Seconds) seconds " -NoNewline -ForegroundColor Yellow
+            Write-Host "from now."
         }
 
         # Check if the account is unlocked or locked
