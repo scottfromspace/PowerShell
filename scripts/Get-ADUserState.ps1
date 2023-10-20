@@ -35,8 +35,10 @@ else
     }
     else
     {
-        Write-Host "Password will expire " -NoNewline
-        Write-host $PasswordExpiryDateTime.ToString("dd/MM/yyyy, 'at' HH:mm:ss") -ForegroundColor Yellow
+        Write-Host "Password will expire on " -NoNewline
+        Write-host $PasswordExpiryDateTime.ToString("MMMM d yyyy") -NoNewline -ForegroundColor Yellow
+        Write-Host ", at " -NoNewline
+        Write-host $PasswordExpiryDateTime.ToString("h:mm tt") -ForegroundColor Yellow
         Write-Host "Time remaining until expiration: " -NoNewline
         Write-host "$($TimeRemaining.Days) days" -NoNewline -ForegroundColor Yellow
         Write-Host ", " -NoNewline
