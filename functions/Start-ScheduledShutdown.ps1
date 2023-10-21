@@ -1,6 +1,6 @@
 ﻿#Serpenz Software, https://www.serpenz.co.nz/
 
-function Compare-ADUsers {
+function Start-ScheduledShutdown {
     param(
         [Parameter(Mandatory=$true)]
         [ValidateSet("Shutdown", "Restart", "Hibernate", "Log off", "Abort")]
