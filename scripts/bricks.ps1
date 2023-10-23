@@ -21,4 +21,5 @@ do{
 
         if ($_ -ne 9) { write-host "" } else { start-sleep -Seconds 1 }
     }
-} while ( $true )
+}
+while ($true)

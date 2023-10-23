@@ -26,7 +26,8 @@ do {
             $escape = $true
         }
 
-    } while ($escape -eq $false)
+    }
+    while ($escape -eq $false)
 
     $name = $name -replace " ","_"; $name = $name + ".iso"
     $name = $outpath + $name
@@ -41,4 +42,5 @@ do {
 
     start-sleep 10
 
-} while ($true)
+}
+while ($true)

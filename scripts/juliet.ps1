@@ -30,9 +30,9 @@ do
         $intRomeo = read-host 'Enter the numeric value for your desired "Romeo"'
         $intRomeo = [int]$intRomeo
     }
-        while($intRomeo -isnot [int])
+    while($intRomeo -isnot [int])
 }
-    while($names[$intRomeo - 1].Length -lt 1)
+while($names[$intRomeo - 1].Length -lt 1)
 
 do
 {
@@ -43,9 +43,9 @@ do
         $intJuliet = read-host 'Enter the numeric value for your desired "Juliet"'
         $intJuliet = [int]$intJuliet
     }
-        while($intJuliet -isnot [int])
+    while($intJuliet -isnot [int])
 }
-    while($names[$intJuliet - 1].Length -lt 1)
+while($names[$intJuliet - 1].Length -lt 1)
 
 $count = 3
 do
@@ -58,7 +58,7 @@ do
     $count--
     start-sleep 1
 }
-    while($count -gt 0)
+while($count -gt 0)
 
 $Romeo = '$speak.SelectVoice($names[$intRomeo - 1])'
 $Juliet = '$speak.SelectVoice($names[$intJuliet - 1])'
