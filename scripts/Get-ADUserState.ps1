@@ -50,29 +50,26 @@ else
         Write-Host "from now."
     }
 
-    # Check if the account is unlocked or locked
-    $AccountStatusLine = $NetUserOutput | Select-String "Account currently locked"
+    # Check if the account is enabled, disabled, or locked
+    $AccountStatusLine = $NetUserOutput | Select-String "Account active"
     if($AccountStatusLine -match "Yes")
+    {
+        Write-Host "Account is " -NoNewline
+        Write-Host "active." -ForegroundColor Cyan
+    }
+    elseif($AccountStatusLine -match "No")
+    {
+        Write-Host "Account is " -NoNewline
+        Write-Host "disabled." -ForegroundColor Red
+    }
+    elseif($AccountStatusLine -match "Locked")
     {
         Write-Host "Account is " -NoNewline
         Write-Host "locked." -ForegroundColor Red
     }
     else
     {
-        Write-Host "Account is " -NoNewline
-        Write-Host "not locked." -ForegroundColor Cyan
-    }
-
-    # Check if the account is enabled or disabled
-    $AccountStatusLine = $NetUserOutput | Select-String "Account active"
-    if($AccountStatusLine -match "Yes")
-    {
-        Write-Host "Account is " -NoNewline
-        Write-Host "enabled." -ForegroundColor Cyan
-    }
-    else
-    {
-        Write-Host "Account is " -NoNewline
-        Write-Host "disabled." -ForegroundColor Red
+        Write-Host "Account status " -NoNewline
+        Write-Host "unknown." -ForegroundColor Yellow
     }
 }
