@@ -1,4 +1,6 @@
-﻿function ConvertTo-ReadableFileSize {
+﻿#Serpenz Software, https://www.serpenz.co.nz/
+
+function ConvertTo-ReadableFileSize {
     param (
         [double]$sizeInBytes
     )
