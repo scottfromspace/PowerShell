@@ -1,6 +1,6 @@
 #Serpenz Software, https://www.serpenz.co.nz/
 
-function Compare-ADUsers {
+function Get-ADUserState {
     param(
         [Parameter(Mandatory=$true)]
         [string]$user
@@ -18,7 +18,7 @@ function Compare-ADUsers {
 
         # Retrieve the user's first name and last name from Active Directory
         $userID = Get-ADUser -Identity $user
-        Write-Host ("User: " + $user + ", " + $userID.GivenName + " " + $userFullName.Surname)
+        Write-Host ("User: " + $user + ", " + $userID.GivenName + " " + $userID.Surname)
         Write-Host ("Email: " + $userID.UserPrincipalName + "`n")
 
         # Extract password expiration information
@@ -50,33 +50,30 @@ function Compare-ADUsers {
             Write-Host "$($TimeRemaining.Minutes) minutes" -NoNewline -ForegroundColor Yellow
             Write-Host ", & " -NoNewline
             Write-Host "$($TimeRemaining.Seconds) seconds " -NoNewline -ForegroundColor Yellow
-            Write-Host "from now."
+            Write-Host "from now.`n"
         }
 
-        # Check if the account is unlocked or locked
-        $AccountStatusLine = $NetUserOutput | Select-String "Account currently locked"
-        if($AccountStatusLine -match "Yes")
-        {
-            Write-Host "Account is " -NoNewline
-            Write-Host "locked." -ForegroundColor Red
-        }
-        else
-        {
-            Write-Host "Account is " -NoNewline
-            Write-Host "not locked." -ForegroundColor Cyan
-        }
-
-        # Check if the account is enabled or disabled
+        # Check if the account is enabled, disabled, or locked
         $AccountStatusLine = $NetUserOutput | Select-String "Account active"
         if($AccountStatusLine -match "Yes")
         {
             Write-Host "Account is " -NoNewline
-            Write-Host "enabled." -ForegroundColor Cyan
+            Write-Host "active.`n" -ForegroundColor Cyan
+        }
+        elseif($AccountStatusLine -match "No")
+        {
+            Write-Host "Account is " -NoNewline
+            Write-Host "disabled.`n" -ForegroundColor Red
+        }
+        elseif($AccountStatusLine -match "Locked")
+        {
+            Write-Host "Account is " -NoNewline
+            Write-Host "locked.`n" -ForegroundColor Red
         }
         else
         {
-            Write-Host "Account is " -NoNewline
-            Write-Host "disabled." -ForegroundColor Red
+            Write-Host "Account status " -NoNewline
+            Write-Host "unknown.`n" -ForegroundColor Yellow
         }
     }
 }

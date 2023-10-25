@@ -1,6 +1,6 @@
 #Serpenz Software, https://www.serpenz.co.nz/
 
-# Get the username from the user
+# Get username
 $user = Read-Host "Enter the username"
 
 $NetUserOutput = net user $user /domain
@@ -15,7 +15,7 @@ else
 {
     # Retrieve the user's first name and last name from Active Directory
     $userID = Get-ADUser -Identity $user
-    Write-Host ("User: " + $user + ", " + $userID.GivenName + " " + $userFullName.Surname)
+    Write-Host ("User: " + $user + ", " + $userID.GivenName + " " + $userID.Surname)
     Write-Host ("Email: " + $userID.UserPrincipalName + "`n")
 
     # Extract password expiration information
@@ -47,7 +47,7 @@ else
         Write-Host "$($TimeRemaining.Minutes) minutes" -NoNewline -ForegroundColor Yellow
         Write-Host ", & " -NoNewline
         Write-Host "$($TimeRemaining.Seconds) seconds " -NoNewline -ForegroundColor Yellow
-        Write-Host "from now."
+        Write-Host "from now.`n"
     }
 
     # Check if the account is enabled, disabled, or locked
@@ -55,21 +55,21 @@ else
     if($AccountStatusLine -match "Yes")
     {
         Write-Host "Account is " -NoNewline
-        Write-Host "active." -ForegroundColor Cyan
+        Write-Host "active.`n" -ForegroundColor Cyan
     }
     elseif($AccountStatusLine -match "No")
     {
         Write-Host "Account is " -NoNewline
-        Write-Host "disabled." -ForegroundColor Red
+        Write-Host "disabled.`n" -ForegroundColor Red
     }
     elseif($AccountStatusLine -match "Locked")
     {
         Write-Host "Account is " -NoNewline
-        Write-Host "locked." -ForegroundColor Red
+        Write-Host "locked.`n" -ForegroundColor Red
     }
     else
     {
         Write-Host "Account status " -NoNewline
-        Write-Host "unknown." -ForegroundColor Yellow
+        Write-Host "unknown.`n" -ForegroundColor Yellow
     }
 }
