@@ -143,3 +143,5 @@ $var | ForEach-Object {
     Write-Host ("Speed: " + (ConvertTo-ReadableDataRate $_.Speed))
     Write-Host "----------------------------------"
 }
+
+Read-Host "Press ENTER key to EXIT"
