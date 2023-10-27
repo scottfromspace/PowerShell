@@ -115,9 +115,9 @@ Write-Host "----------------------------------"
 write-host "`nGPU:" -ForegroundColor Yellow
 $var = Get-WmiObject -Class Win32_VideoController
 Write-Host "----------------------------------"
-Write-Host ("Name: " + $gpuInfo.Name)
-Write-Host ("VRAM: " + (ConvertTo-ReadableFileSize $gpuInfo.AdapterRAM))
-Write-Host ("Driver Version: " + $gpuInfo.DriverVersion)
+Write-Host ("Name: " + $var.Name)
+Write-Host ("VRAM: " + (ConvertTo-ReadableFileSize $var.AdapterRAM))
+Write-Host ("Driver Version: " + $var.DriverVersion)
 Write-Host "----------------------------------"
 
 #storage
@@ -136,7 +136,7 @@ foreach ($drive in $var)
 write-host "`nNetwork Adapters:" -ForegroundColor Yellow
 $var = Get-WmiObject -Class Win32_NetworkAdapter | Where-Object { $_.PhysicalAdapter -eq $true }
 Write-Host "----------------------------------"
-$networkAdapters | ForEach-Object {
+$var | ForEach-Object {
     Write-Host ("Name: " + ($_.Name))
     Write-Host ("Description: " + ($_.Description))
     Write-Host ("MAC Address: " + ($_.MACAddress))
