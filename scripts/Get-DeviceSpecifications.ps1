@@ -126,7 +126,7 @@ $var = Get-PhysicalDisk | Where-Object MediaType -ne "Unspecified" # "Unspecifie
 Write-Host "----------------------------------"
 foreach ($drive in $var)
 {    
-    Write-Host ("Type: " + $drive.FriendlyName)
+    Write-Host ("Name: " + $drive.FriendlyName)
     Write-Host ("Type: " + $drive.MediaType)
     Write-Host ("Capacity: " + (ConvertTo-ReadableFileSize $drive.Size))
     Write-Host "----------------------------------"
