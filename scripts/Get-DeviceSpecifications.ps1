@@ -144,4 +144,4 @@ $var | ForEach-Object {
     Write-Host "----------------------------------"
 }
 
-Read-Host "Press ENTER key to EXIT"
+Read-Host "`nPress ENTER key to EXIT"
