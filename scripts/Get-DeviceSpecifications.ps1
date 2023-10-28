@@ -58,7 +58,7 @@ cls
 write-host "Device:" -ForegroundColor Yellow
 Write-Host "----------------------------------"
 Write-Host ("Name: " + $env:COMPUTERNAME)
-write-host ("Model:" + (Get-WmiObject -Class Win32_ComputerSystem).Model)
+write-host ("Model: " + (Get-WmiObject -Class Win32_ComputerSystem).Model)
 Write-Host "----------------------------------"
 
 #OS
