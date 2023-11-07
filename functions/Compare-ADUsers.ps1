@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-function Compare-ADUsers {
+﻿function Compare-ADUsers {
     param(
         [Parameter(Mandatory=$true)]
         [string]$user1,

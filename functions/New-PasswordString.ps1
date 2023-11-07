@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-function New-PasswordString {
+﻿function New-PasswordString {
     param(
         [Parameter(Mandatory=$true)]
         [int]$PasswordLength,

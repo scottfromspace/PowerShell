@@ -1,7 +1,3 @@
-#region Meta
-	#published by: Scott
-	#last updated: Mon 11th Sept, 2023
-#endregion
 function Show-SerpenzSplash {
     param (
         [string]$color,

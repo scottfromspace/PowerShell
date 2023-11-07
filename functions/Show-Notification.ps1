@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-function Show-Notification {
+﻿function Show-Notification {
     param (
         [Parameter(Mandatory=$true)]
         [string]$TipTitle,

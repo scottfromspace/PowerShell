@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-function ConvertTo-RomanNumeral{
+﻿function ConvertTo-RomanNumeral{
     param(
         [int]$number
     )

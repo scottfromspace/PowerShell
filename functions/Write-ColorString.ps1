@@ -1,5 +1,3 @@
-#Serpenz Software, https://www.serpenz.co.nz/
-
 function Write-ColorString {
     param (
         [Parameter(Mandatory=$true)]

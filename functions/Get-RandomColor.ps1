@@ -1,5 +1,3 @@
-#Serpenz Software, https://www.serpenz.co.nz/
-
 function Get-RandomColor {
     param (
         [ValidateSet("Full", "Monochrome", "LightOnly", "DarkOnly", "Passion")]

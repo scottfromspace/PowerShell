@@ -1,5 +1,3 @@
-#Serpenz Software, https://www.serpenz.co.nz/
-
 function Get-ADUserState {
     param(
         [Parameter(Mandatory=$true)]

@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-function Get-ADUserGroups {
+﻿function Get-ADUserGroups {
     param(
         [Parameter(Mandatory=$true)]
         [string]$user

@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-$palette = [Enum]::GetValues([ConsoleColor]) | where-object {$_ -ne "Black"}
+﻿$palette = [Enum]::GetValues([ConsoleColor]) | where-object {$_ -ne "Black"}
 
 do{
     cls

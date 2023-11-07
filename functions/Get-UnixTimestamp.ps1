@@ -1,5 +1,3 @@
-#Serpenz Software, https://www.serpenz.co.nz/
-
 function Get-UnixTimestamp {
     param (
         [int]$addSeconds = 0,

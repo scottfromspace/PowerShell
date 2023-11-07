@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-function Show-ConsoleColors {
+﻿function Show-ConsoleColors {
     foreach ($bgcolor in [Enum]::GetValues([ConsoleColor]))
     {
         foreach ($fgcolor in [Enum]::GetValues([ConsoleColor]))

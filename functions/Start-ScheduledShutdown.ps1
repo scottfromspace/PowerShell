@@ -1,7 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-#Schedules a shutdown without the annoying warning before execution, and allows user to more easily set a time
-
-function Start-ScheduledShutdown {
+﻿function Start-ScheduledShutdown {
     param(
         [Parameter(Mandatory=$true)]
         [ValidateSet("Shutdown", "Restart", "Hibernate", "Log off", "Abort")]

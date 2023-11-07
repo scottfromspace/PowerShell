@@ -1,5 +1,3 @@
-#Serpenz Software, https://www.serpenz.co.nz/
-
 $array = @(gci *.bmp -name)
 $managed = $array.length -1
 $target = 0

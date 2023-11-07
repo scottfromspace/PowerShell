@@ -1,5 +1,3 @@
-#Serpenz Software, https://www.serpenz.co.nz/
-
 function ConvertTo-ReadableSpeed {
     param (
         [double]$speedInHertz

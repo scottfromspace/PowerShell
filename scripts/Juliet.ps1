@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-Add-Type -AssemblyName System.speech
+﻿Add-Type -AssemblyName System.speech
 $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
 $names = $speak.GetInstalledVoices().voiceinfo | select -Expand name
 

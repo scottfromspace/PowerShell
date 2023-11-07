@@ -1,5 +1,3 @@
-#Serpenz Software, https://www.serpenz.co.nz/
-
 function Write-RainbowString {
     param (
         [Parameter(Mandatory=$true)]

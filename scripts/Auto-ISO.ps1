@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-$pisodir = "" #PowerISO (piso.exe) location
+﻿$pisodir = "" #PowerISO (piso.exe) location
 $dvdroot = "" #Drive letter for dvd drive (e.g. "D:\")
 $outpath = "" #Folder to ouput .iso file to
 

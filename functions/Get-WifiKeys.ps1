@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-function Get-WifiKeys {
+﻿function Get-WifiKeys {
     $savedNetworks = netsh wlan show profiles | Select-String "All User Profile"
 
     $networkNames = foreach($savedNetwork in $savedNetworks){

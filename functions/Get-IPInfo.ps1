@@ -1,6 +1,4 @@
-﻿#Serpenz Software, https://www.serpenz.co.nz/
-
-function Get-IPInfo {
+﻿function Get-IPInfo {
     param (
         [string]$IPAddress
     )
